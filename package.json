@@ -27,7 +27,7 @@
     "satori-html": "^0.3.2"
   },
   "devDependencies": {
-    "@iconify-json/logos": "^1.1.37",
+    "@iconify-json/simple-icons": "^1.1.82",
     "@iconify-json/uil": "^1.1.5",
     "@resvg/resvg-js": "^2.6.0",
     "@typescript-eslint/parser": "^6.9.1",
