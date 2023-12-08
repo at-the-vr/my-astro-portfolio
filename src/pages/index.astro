@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Default.astro';
 import RecentBlogPosts from '@components/generic/RecentBlogPosts.astro';
+import RecentProjects from '@components/generic/RecentProjects.astro';
 import MobileSocials from '@components/home/MobileSocials.astro';
 import { Pill } from '@eliancodes/brutal-ui';
 import { Button } from '@eliancodes/brutal-ui';
@@ -65,7 +66,7 @@ const myInterests = [
       <Image
         class="object-cover h-full w-full rounded-lg md:col-span-2 border-3 border-black card-shadow"
         src={myImage}
-        alt="Atharva's Profile Picture"
+        alt="Atharva's Profile Cover"
         width={myImage.width}
         height={myImage.height}
       />
@@ -88,6 +89,7 @@ const myInterests = [
         </Card>
       </div>
     </section>
+    <RecentProjects />
     <RecentBlogPosts />
   </main>
 </Layout>

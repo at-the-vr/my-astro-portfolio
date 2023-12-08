@@ -1,0 +1,40 @@
+---
+import { Pill } from '@eliancodes/brutal-ui';
+import SummaryCard from '../generic/SummaryCard.astro';
+import { Button } from '@eliancodes/brutal-ui';
+
+interface Props {
+  project: any;
+}
+
+const { project } = Astro.props;
+console.log(typeof(project))
+---
+
+<SummaryCard
+  title={project.projectName}
+  imgAlt={project.projectImageAlt}
+  imgSrc={project.projectImageURL}
+  description={project.projectDescription}
+>
+  <div class="flex justify-end my-4">
+    <Button target="_blank" href={project.projectLink}>See Here &rarr;</Button>
+  </div>
+
+  <div class="hidden sm:inline-block">
+    <div class="flex justify-between items-center">
+      <p class="poppins mt-2 mr-2">Tech used:</p>
+      <ul class="flex gap-4 mt-2">
+        {
+          project.projectTags.map((tag: string) => {
+            return (
+              <li>
+                <Pill>{tag}</Pill>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+</SummaryCard>

@@ -1,0 +1,21 @@
+---
+import ProjectSummaryCard from './ProjectSummaryCard.astro';
+
+interface Props {
+  projects: Array<Object>;
+}
+
+const { projects } = Astro.props;
+---
+
+<ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {
+    projects.map((project: Object) => {
+      return (
+        <li>
+          <ProjectSummaryCard project={project} />
+        </li>
+      );
+    })
+  }
+</ul>

@@ -1,0 +1,23 @@
+---
+import { Card } from '@eliancodes/brutal-ui';
+
+import projectData from '../projects/project-list.json';
+import ProjectList from '@components/projects/ProjectList.astro';
+
+interface Props {
+  count?: number;
+}
+
+const { count } = Astro.props;
+
+let slicedProjectData = projectData.slice(0, count ?? 3);
+---
+
+<section class="mt-8">
+  <Card>
+    <div class="flex justify-between items-start">
+      <h2 class="text-2xl md:text-4xl lg:text-6xl mb-8 dm-serif">Recent Projects</h2>
+    </div>
+    {(<ProjectList projects={slicedProjectData} />)}
+  </Card>
+</section>
